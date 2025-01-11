@@ -100,24 +100,24 @@ export default todoSlice.reducer
 
 // Get Todo
 export const getTodos = createAsyncThunk('FETCH/TODOS' , async() => {
-    const response = await axios.get("/api/todo/")
+    const response = await axios.get("https://backend-todo-8drm.onrender.com/api/todo/")
     return response.data
 }) 
 
 // Create Todo
 export const addTodo = createAsyncThunk("ADD/TODO" , async(formData) => {
-    const response = await axios.post("/api/todo/" ,formData)
+    const response = await axios.post("https://backend-todo-8drm.onrender.com/api/todo/" ,formData)
     return response.data
 })
 
 // Delete Todo
 export const deleteTodo = createAsyncThunk("DELETE/TODO" , async(id) => {
-    const response = await axios.delete("/api/todo/" + id)
+    const response = await axios.delete("https://backend-todo-8drm.onrender.com/api/todo/" + id)
     return response.data
 })
 
 // Update Todo
 export const updateTodo = createAsyncThunk("UPDATE/TODO" , async(updatedTodo) => {
-    const response = await axios.put("/api/todo/" + updatedTodo._id , updatedTodo)
+    const response = await axios.put("https://backend-todo-8drm.onrender.com/api/todo/" + updatedTodo._id , updatedTodo)
     return response.data
 })
